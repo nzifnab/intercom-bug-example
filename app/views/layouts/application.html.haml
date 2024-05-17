@@ -13,4 +13,4 @@
     %main.container.mx-auto.mt-28.px-5.flex
       = yield
 
-    %span{data: {controller: "intercom", intercom_settings_value: {app_id: Rails.application.credentials.intercom.app_id, api_base: "https://api-iam.intercom.io"}.to_json}}
+    %span{data: {controller: "intercom", intercom_settings_value: {app_id: ENV["INTERCOM_APP_ID"], api_base: "https://api-iam.intercom.io"}.to_json}}
