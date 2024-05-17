@@ -9,6 +9,8 @@ To run:
 3. `bin/dev` should start the server. Now go to `localhost:3000` and you will be met with a very barebones "wizard" form
 4. Open the intercom widget, hit next on the form, intercom breaks (but only in firefox, chrome is fine).
 
+(You don't need npm or node or yarn, it uses importmaps so none of that shenanigans, just need a ruby and rails install)
+
 Note that the NPM package `@intercom/messenger-js-sdk` didn't quite work as described, when I use
 `Intercom({app_id: 'something'})` it gives an error that "Intercom is not a function". By calling it with
 `Intercom.default({app_id: 'somethong'})` it works fine.
