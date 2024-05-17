@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>IntercomTesting2</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+!!!
+%html
+  %head
+    %title IntercomTesting2
+    %meta{name: "viewport", content: "width=device-width,initial-scale=1"}
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  %body
+    %main.container.mx-auto.mt-28.px-5.flex
+      = yield
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
-  </body>
-</html>
+    %span{data: {controller: "intercom", intercom_settings_value: {app_id: Rails.application.credentials.intercom.app_id, api_base: "https://api-iam.intercom.io"}.to_json}}
