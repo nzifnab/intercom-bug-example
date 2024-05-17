@@ -1,0 +1,8 @@
+- if flash[:success]
+  .bg-green-500.text-white.p-4.rounded-md
+    = flash[:success]
+
+= form_with url: wizard_path(index), method: :put do |f|
+  = f.hidden_field :index, value: index
+  .text-right
+    .mt-10= f.submit "Next", class: "bg-blue-500 text-white p-2 rounded-md cursor-pointer", data: {turbo_submits_with: "Saving..."}

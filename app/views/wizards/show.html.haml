@@ -1,0 +1,6 @@
+.max-w-4xl.ml-auto.mr-auto.py-3.px-5
+  %h1 Some kind of wizard
+  %br
+
+  = turbo_frame_tag :wizard, autoscroll: true, data: {turbo_action: "advance", autoscroll_block: "end"} do
+    = render partial: "wizards/form", locals: {index: params[:id]}
